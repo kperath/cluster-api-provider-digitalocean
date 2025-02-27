@@ -105,6 +105,10 @@ $ export DO_B64ENCODED_CREDENTIALS="$(echo -n "${DIGITALOCEAN_ACCESS_TOKEN}" | b
 
 # Initialize a management cluster with digitalocean infrastructure provider.
 $ clusterctl init --infrastructure digitalocean
+
+
+# installs CAPI crds and CAPDO crds and also creates CAPI & CAPDO namespaces
+
 ```
 
 The output will be similar to this:
