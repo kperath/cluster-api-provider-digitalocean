@@ -211,6 +211,7 @@ $ KUBECONFIG=capdo-quickstart.kubeconfig kubectl apply -f https://docs.projectca
 $ KUBECONFIG=capdo-quickstart.kubeconfig kubectl create secret generic digitalocean --namespace kube-system --from-literal access-token=$DIGITALOCEAN_ACCESS_TOKEN
 
 # Deploy DigitalOcean Cloud Controller Manager
+# CNI & CoreDNS can't finish without reaching DO right :)
 $ KUBECONFIG=capdo-quickstart.kubeconfig kubectl apply -f https://raw.githubusercontent.com/digitalocean/digitalocean-cloud-controller-manager/refs/heads/master/releases/digitalocean-cloud-controller-manager/v0.1.59.yml
 
 # Deploy DigitalOcean CSI (optional)
