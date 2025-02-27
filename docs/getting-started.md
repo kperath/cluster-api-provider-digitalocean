@@ -14,6 +14,51 @@
    - If you want to use an existing Kubernetes cluster you'll need to prepare a kubeconfig for the cluster you intend to use.
 - Install [doctl][doctl] (optional)
 
+## Feb 27, 2025 Demo setup
+```sh
+# Install clusterctl
+curl -LO https://github.com/kubernetes-sigs/cluster-api/releases/download/v1.9.5/clusterctl-linux-amd64
+
+# Install kubectl
+curl -LO https://dl.k8s.io/release/v1.32.0/bin/linux/amd64/kubectl
+
+# Install kustomize
+ curl -LO https://github.com/kubernetes-sigs/kustomize/releases/download/kustomize%2Fv5.6.0/kustomize_v5.6.0_linux_amd64.tar.gz
+
+# Move these binaries after unzipping & archiving them into /usr/local/bin
+
+# Install Packer
+curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
+sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(lsb_release -cs) main"
+sudo apt-get update && sudo apt-get install packer
+
+# Install Ansible
+apt-get install pipx
+pipx install --include-deps ansible
+pipx ensurepath
+
+# Install Docker
+sudo apt-get update
+sudo apt-get install ca-certificates curl
+sudo install -m 0755 -d /etc/apt/keyrings
+sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+sudo chmod a+r /etc/apt/keyrings/docker.asc
+echo   "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
+  $(. /etc/os-release && echo "${UBUNTU_CODENAME:-$VERSION_CODENAME}") stable" |   sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+sudo apt-get update
+sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+
+# Install Kind
+[ $(uname -m) = x86_64 ] && curl -Lo ./kind https://kind.sigs.k8s.io/dl/v0.27.0/kind-$(uname)-amd64
+
+#Install doctl
+sudo snap install doctl
+
+# Move all binaries into /usr/local/bin and source your shell config
+source ~/.bashrc
+```
+
+
 ## Setup Environment
 
 ```bash
