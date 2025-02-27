@@ -54,6 +54,12 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin 
 #Install doctl
 sudo snap install doctl
 
+# Install Make (Needed by imagebulider)
+apt install make
+
+# Install Unzip (Needed by imagebulider)
+apit install unzip
+
 # Move all binaries into /usr/local/bin and source your shell config
 source ~/.bashrc
 ```
@@ -81,7 +87,7 @@ Change directory to images/capi within the image builder repository:
 
 Choose a DigitalOcean image build target from the list returned by `make | grep build-do` and generate a DigitalOcean image (choosing Ubuntu in the example below):
 
-    $ make build-do-ubuntu-2004
+    $ make build-do-ubuntu-2204
 
 Verify that the image is available in your account and remember the corresponding image ID:
 
