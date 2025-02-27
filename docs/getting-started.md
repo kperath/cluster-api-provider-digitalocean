@@ -148,7 +148,7 @@ Generate templates for creating workload clusters:
 ```bash
 $ clusterctl generate cluster capdo-quickstart \
     --infrastructure digitalocean \
-    --kubernetes-version v1.17.11 \
+    --kubernetes-version v1.31.4 \
     --control-plane-machine-count 1 \
     --worker-machine-count 3 > capdo-quickstart-cluster.yaml
 ```
