@@ -97,6 +97,10 @@ Verify that the image is available in your account and remember the correspondin
 ## Initialize the management cluster
 
 ```bash
+
+# with kind cluster do
+kind create cluster
+
 $ export DO_B64ENCODED_CREDENTIALS="$(echo -n "${DIGITALOCEAN_ACCESS_TOKEN}" | base64 | tr -d '\n')"
 
 # Initialize a management cluster with digitalocean infrastructure provider.
