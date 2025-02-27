@@ -128,11 +128,11 @@ Setting up environment variables:
 
 ```bash
 $ export DO_REGION=<region>
-$ export DO_SSH_KEY_FINGERPRINT=<your-ssh-key-fingerprint>
+$ export DO_SSH_KEY_FINGERPRINT=<your-ssh-key-fingerprint> # md5 hash
 $ export DO_CONTROL_PLANE_MACHINE_TYPE=<droplet-size>
-$ export DO_CONTROL_PLANE_MACHINE_IMAGE=<image-id> # created in the step above.
+$ export DO_CONTROL_PLANE_MACHINE_IMAGE=<image-id> # created in the step above. # doctl compute image list-user
 $ export DO_NODE_MACHINE_TYPE=<droplet-size>
-$ export DO_NODE_MACHINE_IMAGE=<image-id> # created in the step above.
+$ export DO_NODE_MACHINE_IMAGE=<image-id> # created in the step above. # doctl compute image list-user
 ```
 
 Generate templates for creating workload clusters:
