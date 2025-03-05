@@ -107,3 +107,4 @@ spec:
           name: '{{ ds.meta_data.local_hostname }}'
           kubeletExtraArgs:
             cloud-provider: external
+            provider-id: digitalocean://'{{ ds.meta_data["instance_id"] }}'
